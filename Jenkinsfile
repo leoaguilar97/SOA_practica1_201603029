@@ -1,19 +1,14 @@
 pipeline {
-    agent { label 'master'}
+    agent any
     
+    triggers {
+        githubPush()
+    }
+
     stages {
-        stage ('build') {
-            sh "echo building"
-        }
-        stage ('test') {
+        stage('Hello') {
             steps {
-                sh "echo testing"
-            }
-        }
-        
-        stage ('deploy') {
-            steps {
-                sh "echo deploy"
+                echo 'Hello World'
             }
         }
     }
