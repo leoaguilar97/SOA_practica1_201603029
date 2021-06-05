@@ -6,9 +6,21 @@ pipeline {
     }
 
     stages {
-        stage('Hello') {
+        stage('Test') {
             steps {
-                echo 'Hello World'
+                echo 'Initializing testing'
+            }
+        }
+        
+        stage('Build') {
+            steps {
+                echo 'Initializing build'
+            }
+        }
+        
+        stage('Deploy') {
+            steps {
+                echo 'Initializing deployment'
             }
         }
     }

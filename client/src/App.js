@@ -31,6 +31,8 @@ import './App.css';
 
 import axios from 'axios';
 
+const API = window.localStorage.getItem('API_URL') || 'http://localhost:5000';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
@@ -108,7 +110,7 @@ factorial(5);
   const getFromApi = async (e) => {
     try {
       console.log('Obteniendo expresion de API');
-      const { data } = await axios.post('/eval', { expression: code });
+      const { data } = await axios.post(API + '/eval', { expression: code });
       console.log(data);
 
       setResult(data.split("\n>> ").filter(v => v && v.trim() !== ""))
