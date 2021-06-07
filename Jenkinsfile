@@ -14,20 +14,36 @@ pipeline {
                     bat 'npm ci'
                     bat 'npm test'
                 }
+
+                dir("client"){
+                    bat 'npm ci'
+                    bat 'npm test'
+                }
             }
         }
         
         stage('Build') {
             steps {
                 echo 'Initializing build'
-                bat 'dir'
+                
+                dir ("client"){
+                    bat 'npm ci'
+                    bat 'npm run-script build'
+                }
             }
         }
         
         stage('Deploy') {
             steps {
                 echo 'Initializing deployment'
-                bat 'dir' 
+
+                dir("server"){
+                    bat 'pm2 start index.js --name api'
+                }
+
+                dir("client"){
+                    bat 'pm2 serve build 8082 --spa'
+                }
             }
         }
     }
