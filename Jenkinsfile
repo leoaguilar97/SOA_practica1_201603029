@@ -9,7 +9,9 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Initializing testing'
+                bat 'dir'
                 bat 'cd server'
+                bat 'dir'
                 bat 'npm ci'
                 bat 'npm test'
                 bat 'cd ../client'
