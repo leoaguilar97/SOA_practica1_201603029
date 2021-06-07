@@ -9,21 +9,21 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Initializing testing'
-                sh 'ls'
+                bash 'dir'
             }
         }
         
         stage('Build') {
             steps {
                 echo 'Initializing build'
-                sh 'ls'
+                bash 'ls'
             }
         }
         
         stage('Deploy') {
             steps {
                 echo 'Initializing deployment'
-                sh 'ls'
+                bash 'ls' 
             }
         }
     }
