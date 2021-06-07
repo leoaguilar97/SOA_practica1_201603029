@@ -17,7 +17,6 @@ pipeline {
 
                 dir("client"){
                     bat 'npm ci'
-                    bat 'npm test'
                 }
             }
         }
