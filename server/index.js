@@ -8,7 +8,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.get('/version', (_, res) => res.send(process.env.VERSION || '1.0'));
+app.get('/version', (_, res) => res.send(process.env.VERSION || '1.2'));
 
 app.post('/eval', ({ body }, res) => {
     const { expression } = body;
