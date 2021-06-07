@@ -9,11 +9,11 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Initializing testing'
-                bat 'dir'
-                bat 'chdir /d ./server'
-                bat 'dir'
-                bat 'npm ci'
-                bat 'npm test'
+
+                dir("server"){
+                    bat 'npm ci'
+                    bat 'npm test'
+                }
             }
         }
         
