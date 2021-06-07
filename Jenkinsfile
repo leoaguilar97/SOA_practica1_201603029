@@ -37,11 +37,11 @@ pipeline {
                 echo 'Initializing deployment'
 
                 dir("server"){
-                    bat 'pm2 start index.js --name api'
+                    bat 'pm2 start index.js --name api -f'
                 }
 
                 dir("client"){
-                    bat 'pm2 serve build 8082 --spa'
+                    bat 'pm2 serve build 8082 --spa -f'
                 }
             }
         }
