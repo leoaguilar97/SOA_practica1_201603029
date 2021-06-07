@@ -10,12 +10,10 @@ pipeline {
             steps {
                 echo 'Initializing testing'
                 bat 'dir'
-                bat 'cd server'
+                bat 'chdir /d ./server'
                 bat 'dir'
                 bat 'npm ci'
                 bat 'npm test'
-                bat 'cd ../client'
-                bat 'npm ci'
             }
         }
         
