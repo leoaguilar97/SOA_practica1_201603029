@@ -105,7 +105,7 @@ factorial(5);
 
 `);
 
-  const [result, setResult] = React.useState([]);
+  const [result, setResult] = React.useState(['Acá saldrán tus resultados...']);
 
   const getFromApi = async (e) => {
     try {
