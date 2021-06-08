@@ -136,18 +136,8 @@ factorial(5);
         <Grid container spacing={5} justify="space-between" className={classes.cont}>
           <Grid item xs={6}  >
 
+
             <Paper elevation={3} className={classes.grd}>
-              <Editor
-                value={code}
-                className={classes.editor}
-                onValueChange={(code) => setCode(code)}
-                highlight={(code) => highlight(code, languages.js)}
-                padding={20}
-                style={{
-                  fontFamily: '"Fira code", "Fira Mono", monospace',
-                  fontSize: 15,
-                }}
-              />
 
               <Button
                 variant="contained"
@@ -160,6 +150,19 @@ factorial(5);
               >
                 Ejecutar
       </Button>
+              <br />
+              <Editor
+                value={code}
+                className={classes.editor}
+                onValueChange={(code) => setCode(code)}
+                highlight={(code) => highlight(code, languages.js)}
+                padding={20}
+                style={{
+                  fontFamily: '"Fira code", "Fira Mono", monospace',
+                  fontSize: 15,
+                }}
+              />
+
             </Paper>
 
           </Grid>
