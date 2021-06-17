@@ -34,16 +34,9 @@ pipeline {
         
         stage('Deploy') {
             steps {
-                echo 'Initializing deployment'
-
-                dir("server"){
-                    bat 'pm2 reload api'
-                }
-
-                dir("client"){
-                    bat 'pm2 stop client'
-                    bat 'pm2 serve build 8082 --spa --name client'
-                }
+                echo 'Initializing Deployment'
+                
+                bat 'python ./fabric.py'
             }
         }
     }
