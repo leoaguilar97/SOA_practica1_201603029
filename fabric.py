@@ -46,20 +46,22 @@ def deploy():
     #sh("sudo npm install pm2 -g")
 
     #echo("Descargando codigo del repositorio")
-    sh("git clone https://github.com/leoaguilar97/SOA_practica1_201603029.git")
+    #sh("git clone https://github.com/leoaguilar97/SOA_practica1_201603029.git")
     
-    echo("Instalando API")
-    sh("cd ./SOA_practica1_201603029/server && sudo npm ci")
-    if not sh("sudo pm2 restart api"):
-        print("Error realizando deploy de API, intentando iniciarla primero")
-        if not sh("cd ./SOA_practica1_201603029/server && sudo pm2 start ./index.js --name api"):
-            sys.exit("Error realizando el deploy de API")
+    #echo("Instalando API")
+    #sh("cd ./SOA_practica1_201603029/server && sudo npm ci")
+    #if not sh("sudo pm2 restart api"):
+        #print("Error realizando deploy de API, intentando iniciarla primero")
+        #if not sh("cd ./SOA_practica1_201603029/server && sudo pm2 start ./index.js --name api"):
+            #sys.exit("Error realizando el deploy de API")
 
-    echo("Instalando cliente")
-    sh("cd ./SOA_practica1_201603029/client && sudo npm ci")
-    sh("cd ./SOA_practica1_201603029/client && npm run-script build")
-    sh("cd ./SOA_practica1_201603029/client && pm2 stop client")
-    sh("cd ./SOA_practica1_201603029/client && pm2 serve build 8082 --spa -f --name client")
+    sh("sudo pm2 restart api")
+
+    #echo("Instalando cliente")
+    #sh("cd ./SOA_practica1_201603029/client && sudo npm ci")
+    #sh("cd ./SOA_practica1_201603029/client && npm run-script build")
+    #sh("cd ./SOA_practica1_201603029/client && pm2 stop client")
+    #sh("cd ./SOA_practica1_201603029/client && pm2 serve build 8082 --spa -f --name client")
     
     sh("echo \"Deployment realizado correctamente\" >> deployment.log")
 
