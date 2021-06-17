@@ -24,6 +24,8 @@ def sh(command):
         print("$ " + command)
         c.run(command)
         return True
+    except UnicodeEncodeError:
+        return True
     except Exception as e:
         print("$ Error ejecutando '" + command + "'")
         print(e)
