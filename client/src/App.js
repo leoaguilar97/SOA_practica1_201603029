@@ -31,7 +31,7 @@ import './App.css';
 
 import axios from 'axios';
 
-const API = window.localStorage.getItem('API_URL') || 'http://34.136.26.17/:5000';
+const API = window.localStorage.getItem('API_URL') || 'http://34.136.26.17:5000';
 
 const useStyles = makeStyles((theme) => ({
   root: {
