@@ -28,7 +28,7 @@ def sh(command):
         print(" ** Unicode Error **")
         return True
     except Exception as e:
-        print("$ Error ejecutando '" + command + "'")
+        print("*** Error ejecutando '" + command + "' ***")
         print(e)
         return False
 
