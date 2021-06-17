@@ -34,18 +34,18 @@ def echo(str):
 
 def deploy():
    
-    echo("Instalando NodeJS")
-    sh("sudo apt update");
+    #echo("Instalando NodeJS")
+    #sh("sudo apt update");
 
-    sh("curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -")
-    sh("sudo apt-get install -y nodejs")
+    #sh("curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -")
+    #sh("sudo apt-get install -y nodejs")
 
-    echo("NodeJS instalado y actualizado correctamente")
+    #echo("NodeJS instalado y actualizado correctamente")
 
-    echo("Instalando PM2")
-    sh("sudo npm install pm2 -g")
+    #echo("Instalando PM2")
+    #sh("sudo npm install pm2 -g")
 
-    echo("Descargando codigo del repositorio")
+    #echo("Descargando codigo del repositorio")
     sh("git clone https://github.com/leoaguilar97/SOA_practica1_201603029.git")
     
     echo("Instalando API")
