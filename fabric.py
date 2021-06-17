@@ -50,6 +50,7 @@ def deploy():
 
     echo("Descargando codigo del repositorio")
     sh("git clone https://github.com/leoaguilar97/SOA_practica1_201603029.git")
+    sh("cd ./SOA_practica1_201603029 && git pull")
     
     echo("Instalando API")
     sh("cd ./SOA_practica1_201603029/server && sudo npm ci")
