@@ -8,7 +8,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.get('/version', (_, res) => res.send(process.env.VERSION || '1.2'));
+app.get('/version', (_, res) => res.send(process.env.VERSION || '1.3'));
 
 app.post('/eval', ({ body }, res) => {
     const { expression } = body;
@@ -18,3 +18,4 @@ app.post('/eval', ({ body }, res) => {
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, console.log(`API iniciada en http://localhost:${PORT}`));
+
