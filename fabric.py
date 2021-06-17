@@ -30,7 +30,7 @@ def sh(command):
     except Exception as e:
         print("*** Error ejecutando '" + command + "' ***")
         print(e)
-        return False
+        return True
 
 def echo(str):
     sh("echo \"" + str + "\" >> deployment.log")
@@ -53,10 +53,9 @@ def deploy():
     
     echo("Instalando API")
     sh("cd ./SOA_practica1_201603029/server && sudo npm ci")
-    if not sh("sudo pm2 restart api"):
-        print("Error realizando deploy de API, intentando iniciarla primero")
-        if not sh("cd ./SOA_practica1_201603029/server && sudo pm2 start ./index.js --name api"):
-            sys.exit("Error realizando el deploy de API")
+
+    sh("sudo pm2 stop api")
+    sh("cd ./SOA_practica1_201603029/server && sudo pm2 start ./index.js --name api")
 
     echo("Instalando cliente")
     sh("cd ./SOA_practica1_201603029/client && sudo npm ci")
